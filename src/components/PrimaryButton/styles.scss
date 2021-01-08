@@ -3,4 +3,18 @@
     padding: 1.5rem 3rem;
     max-width: fit-content;
     color: var(--white);
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &:hover{
+        background-color: var(--main-color-hover);
+    }
+}
+
+.orange{
+    background-color: var(--secondary-color);
+
+    &:hover{
+        background-color: var(--secondary-color-hover);
+    }
 }
