@@ -1,0 +1,25 @@
+.home-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.home-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    >h2{
+        max-width: 35rem;
+        
+        >h1{
+            
+        }
+    }
+
+    >img{
+        width: 70rem;
+    }
+}
