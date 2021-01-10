@@ -11,11 +11,9 @@ const PrimaryButton:React.FC<ButtonInterface> = ({
     isOrange
 })=>{
     return(
-        <a href="#">
-            <div className={isOrange?'orange primary-btn': 'primary-btn'} onClick={()=>console.log('clicked on primary button')}>
-                {text}
-            </div>
-        </a>
+        <div className={isOrange?'orange primary-btn': 'primary-btn'} onClick={()=>console.log('clicked on primary button')}>
+            {text}
+        </div>
     )
 };
 
