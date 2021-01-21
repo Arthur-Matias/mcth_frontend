@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './styles.scss';
-import LogoM from '../../assets/m-logo.svg'
+import logoM from '../../assets/m-logo.svg'
+import mecathonLogo from '../../assets/mecathon.svg'
+
+import { NavLink } from 'react-router-dom';
 
 interface SideMenuInterface{
     isOrange?:boolean;
@@ -13,7 +16,6 @@ interface SideMenuItemInterface{
 
 const SideMenu:React.FC<SideMenuInterface> = ({
     items,
-    isOrange
 })=>{
 
     const [isOpen, setOpen] = useState(false);
@@ -27,11 +29,13 @@ const SideMenu:React.FC<SideMenuInterface> = ({
     const SideMenuItem:React.FC  <SideMenuItemInterface> = ({
         title
     })=>{
+        let newTitle= title==='home'?'':`${title}`;
+
         return(
             <>
-                <div className="side-menu-item">
-                    {title}
-                </div>
+                <NavLink strict to={`/${newTitle}`} activeClassName ="selectedLink" className="side-menu-item" >
+                    <p>{title}</p>
+                </NavLink>
             </>
         )
         
@@ -42,14 +46,18 @@ const SideMenu:React.FC<SideMenuInterface> = ({
             <>
                 <div className="side-menu">
                     <div className="side-menu-header">
-
+                        <img src={mecathonLogo} alt="mecathon with soft shadows on bue and orange"/>
                     </div>
                     <div className="side-menu-body">
-                        <select name="side-menu-items" id="side-menu-items">
+                        <div className="side-menu-items">
                             {items.map((element, i) => {
-                                return <SideMenuItem key={i} title={element} />
+                                return (
+                                    <div className="item-wrapper">
+                                        <SideMenuItem key={i} title={element} />
+                                    </div>
+                                )
                             })}
-                        </select>
+                        </div>
                     </div>
                 </div>
             </>
@@ -60,7 +68,7 @@ const SideMenu:React.FC<SideMenuInterface> = ({
         return(
             <>
                 <div className="side-menu">
-                    <img className="logo closed" src={LogoM} alt="letter 'm' with a soft shadow on the colors blue and orange "/>
+                    <img className="logo closed" src={logoM} alt="letter 'm' with a soft shadow on the colors blue and orange "/>
                 </div>
             </>
         )

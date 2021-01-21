@@ -1,7 +1,10 @@
 .side-menu-container{
     height: 100vh;
-    width: 5vw;
+    width: auto;
+    min-width: 5vw;
     transition: 0.5s ease-in;
+    position: fixed;
+
     @media screen and (max-width: 1200px) {
         width: 8vw;
     }
@@ -16,29 +19,17 @@
     }
 
     &.open{
-        width: 20vw;
-
-        @media screen and (max-width: 1200px) {
-            width: 23vw;
-        }
-        @media screen and (max-width: 800px) {
-            width: 25vw;
-        }
-        @media screen and (max-width: 600px) {
-            width: 27vw;
-        }
-        @media screen and (max-width: 400px) {
-            width: 29vw;
-        }
+        width: auto;
+        transition: 0.5s ease-in;
 
     }
 }   
 
 .side-menu{
-    padding: .7rem;
+    padding: 1rem;
     height: 100%;
-    width: 100%;
     background-color: var(--main-color);
+    transition: 0.5s ease-in;
     
     @media screen and (max-width: 1200px) {
         padding: .6rem;
@@ -51,5 +42,40 @@
     }
     @media screen and (max-width: 400px) {
         padding: .1rem;
+    }
+}
+
+.side-menu-item{
+    text-decoration: none;
+    color: var(--white);
+    text-transform: capitalize;
+    width: 100%;
+    transition: 0.5s ease;
+    >p{
+        display: flex;
+        align-items: center;
+        padding-left: .5rem;
+        transition: 0.5s ease;
+        height: 3rem;
+    }
+
+    &:hover, .selectedLink{
+        >p{
+            border-left: 1rem solid var(--secondary-color);
+        }
+    }
+}
+
+.item-wrapper{
+    width: 100%;
+    font-weight: bold;
+}
+
+.side-menu-header{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: 0.5s ease;
+    >img{
+        min-width: 20vw;
     }
 }
