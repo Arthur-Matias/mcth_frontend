@@ -8,10 +8,10 @@ interface ButtonInterface{
 
 const PrimaryButton:React.FC<ButtonInterface> = ({
     text,
-    isOrange
+    isOrange,
 })=>{
     return(
-        <div className={isOrange?'orange primary-btn': 'primary-btn'} onClick={()=>console.log('clicked on primary button')}>
+        <div className={isOrange?'orange primary-btn': 'primary-btn'}>
             {text}
         </div>
     )
