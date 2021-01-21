@@ -1,13 +1,16 @@
 import React from 'react';
-import mainteanceSvg from '../../assets/mainteance.svg'
-import PrimaryButton from '../../components/PrimaryButton';
+import LoginForm from '../../components/LoginForm';
 import SideMenu from '../../components/SideMenu';
 import './styles.scss';
 
 const Login = ()=>{
     return(
         <>
-            <SideMenu items={['a','b','c']} />
+            <div className="login-container">
+                <SideMenu items={['home', 'login','registro','ajuda']} />
+
+                <LoginForm />
+            </div>
         </>
     )
 }
