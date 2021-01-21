@@ -1,11 +1,10 @@
 import React from 'react';
-import Home from './pages/Home';
-import Login from './pages/Login';
+import Routes from './Routes';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Routes />
     </div>
   );
 }
