@@ -13,7 +13,7 @@ const Home = ()=>{
                     <PrimaryButton text="entrar" isOrange={true}/>
                 </Link>
                 <p className='m-t'>ou</p>
-                <Link to='/register'>
+                <Link to='/registro'>
                     <b onClick={()=>console.log('Clicked register button on Homepage')}>Registre-se</b>
                 </Link>
             </div>

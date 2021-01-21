@@ -3,16 +3,19 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 const Routes = () => {
     return(
         <BrowserRouter>
             <Switch>
 
-                <Route path="/" exact component={Home} />
-                <Redirect from="/home" to="/" />
+                <Route path="/home" exact component={Home} />
+                <Redirect exact from="/" to="/home" />
 
                 <Route path="/login" component={Login}/>
+
+                <Route path="/registro" component={Register}/>
 
             </Switch>
         </BrowserRouter>

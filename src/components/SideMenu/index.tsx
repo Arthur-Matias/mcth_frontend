@@ -33,7 +33,7 @@ const SideMenu:React.FC<SideMenuInterface> = ({
 
         return(
             <>
-                <NavLink strict to={`/${newTitle}`} activeClassName ="selectedLink" className="side-menu-item" >
+                <NavLink to={`/${newTitle}`} activeClassName ="selectedLink" className="side-menu-item" >
                     <p>{title}</p>
                 </NavLink>
             </>
