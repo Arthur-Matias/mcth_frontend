@@ -15,7 +15,7 @@
     justify-content: center;
     text-align: center;
     padding: 1rem 2rem;
-    width: 45rem;
+    width: 50rem;
     border-radius: 3px;
 }
 
@@ -78,4 +78,12 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.input-icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
 }
