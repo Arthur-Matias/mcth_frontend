@@ -29,11 +29,10 @@ const SideMenu:React.FC<SideMenuInterface> = ({
     const SideMenuItem:React.FC  <SideMenuItemInterface> = ({
         title
     })=>{
-        let newTitle= title==='home'?'':`${title}`;
 
         return(
             <>
-                <NavLink to={`/${newTitle}`} activeClassName ="selectedLink" className="side-menu-item" >
+                <NavLink to={`/${title}`} activeClassName ="activeLink" className="side-menu-item" >
                     <p>{title}</p>
                 </NavLink>
             </>
@@ -44,9 +43,9 @@ const SideMenu:React.FC<SideMenuInterface> = ({
     const SideMenuOpen = ()=>{
         return(
             <>
-                <div className="side-menu">
+                <div className="side-menu open">
                     <div className="side-menu-header">
-                        <img src={mecathonLogo} alt="mecathon with soft shadows on bue and orange"/>
+                        <img style={{width: '10rem'}} src={mecathonLogo} alt="mecathon with soft shadows on bue and orange"/>
                     </div>
                     <div className="side-menu-body">
                         <div className="side-menu-items">
@@ -67,9 +66,9 @@ const SideMenu:React.FC<SideMenuInterface> = ({
     const SideMenuClosed = ()=>{
         return(
             <>
-                <div className="side-menu">
-                    <img className="logo closed" src={logoM} alt="letter 'm' with a soft shadow on the colors blue and orange "/>
-                </div>
+                    <div className="side-menu" style={{paddingTop: '1rem'}}>
+                        <img className="logo closed" style={{width: '5rem'}} src={logoM} alt="letter 'm' with a soft shadow on the colors blue and orange "/>
+                    </div>
             </>
         )
         
@@ -77,6 +76,7 @@ const SideMenu:React.FC<SideMenuInterface> = ({
 
     return(
         <div className={isOpen?"side-menu-container open":"side-menu-container"} onMouseLeave={handleMouseHover} onMouseEnter={handleMouseHover}>
+            <div className="teste"></div>
             {isOpen?<SideMenuOpen />:<SideMenuClosed />}
         </div>
     )

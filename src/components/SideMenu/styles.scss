@@ -1,48 +1,18 @@
-.side-menu-container{
-    height: 100vh;
-    width: auto;
-    min-width: 5vw;
-    transition: 0.5s ease-in;
-    position: fixed;
-
-    @media screen and (max-width: 1200px) {
-        width: 8vw;
-    }
-    @media screen and (max-width: 800px) {
-        width: 10vw;
-    }
-    @media screen and (max-width: 600px) {
-        width: 12vw;
-    }
-    @media screen and (max-width: 400px) {
-        width: 14vw;
-    }
-
-    &.open{
-        width: auto;
-        transition: 0.5s ease-in;
-
-    }
-}   
-
 .side-menu{
-    padding: 1rem;
     height: 100%;
     background-color: var(--main-color);
-    transition: 0.5s ease-in;
-    
-    @media screen and (max-width: 1200px) {
-        padding: .6rem;
+    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    &.open{
+        grid-column-start: 1;
+        grid-column-end: 6;
     }
-    @media screen and (max-width: 800px) {
-        padding: .5rem;
-    }
-    @media screen and (max-width: 600px) {
-        padding: .3rem;
-    }
-    @media screen and (max-width: 400px) {
-        padding: .1rem;
-    }
+}
+.side-menu-open{
+    padding: 0;
+    height: 100%;
 }
 
 .side-menu-item{
@@ -57,9 +27,10 @@
         padding-left: .5rem;
         transition: 0.5s ease;
         height: 3rem;
+        min-width: 100%;
     }
 
-    &:hover, .selectedLink{
+    &:hover, &.activeLink{
         >p{
             border-left: 1rem solid var(--secondary-color);
         }
@@ -75,7 +46,4 @@
     padding: 1rem;
     margin-bottom: 1rem;
     transition: 0.5s ease;
-    >img{
-        min-width: 20vw;
-    }
 }
