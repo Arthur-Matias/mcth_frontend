@@ -9,11 +9,9 @@ import mecathonLogo from '../../assets/mecathon.svg';
 
 const RegisterForm = () => {
 
-
-
-    function RenderSelectedCategory(){
-        const [category, setCategory] = useState('');
-    }
+    
+    const [category, setCategory] = useState('');
+    const [userGender, setUserGender] = useState('');
 
     return (
         <div className="register-form-container">
@@ -63,11 +61,11 @@ const RegisterForm = () => {
                         </div>
                         <div className="input-wrapper">
                             <label htmlFor="userGender">Sexo:</label>
-                            <select name="userGender" id="userGender">
-                                <option value="m">Masculino</option>
-                                <option value="f">Feminino</option>
-                                <option value="other">LGBTQ+</option>
-                                <option value="n/a">Prefiro não informar</option>
+                            <select name="userGender" onChange={e=>setUserGender(e.target.value)} id="userGender">
+                                <option id="userGender" value="m">Masculino</option>
+                                <option id="userGender" value="f">Feminino</option>
+                                <option id="userGender" value="other">LGBTQ+</option>
+                                <option id="userGender" value="n/a">Prefiro não informar</option>
                             </select>
                         </div>
                     </div>
@@ -85,15 +83,13 @@ const RegisterForm = () => {
 
                     <div className="input-wrapper">
                     <label htmlFor="userCategory">Categoria:</label>
-                            <select required name="userCategory" id="userCategory">
-                                <option value="" defaultChecked>Selecione ...</option>
-                                <option value="m">Competidor</option>
-                                <option value="f">Mentor</option>
-                                <option value="other">Avaliador</option>
-                            </select>
+                        <select required name="userCategory" id="userCategory" onChange={e=>setCategory(e.target.value)}>
+                            <option value="" defaultChecked>Selecione ...</option>
+                            <option id="userCategory" value="comp">Competidor</option>
+                            <option id="userCategory" value="mentor">Mentor</option>
+                            <option id="userCategory" value="judge">Avaliador</option>
+                        </select>
                     </div>
-                    {RenderSelectedCategory}
-                    
                 </div>
 
 
